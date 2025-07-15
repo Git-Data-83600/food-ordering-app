@@ -1,0 +1,91 @@
+http:
+  port: 6001
+apiEndpoints:
+  userApiEndpoint:
+    host: localhost
+    paths: ['/user', '/user/*']
+  catalogApiEndpoint:
+    host: localhost
+    paths: ['/catalog', '/catalog/*']
+  cartApiEndpoint:
+    host: localhost
+    paths: ['/cart', '/cart/*']
+  orderApiEndpoint:
+    host: localhost
+    paths: ['/order', '/order/*']
+  notificationApiEndpoint:
+    host: localhost
+    paths: ['/notification', '/notification/*']
+  chatApiEndpoint:
+    host: localhost
+    paths: ['/chat', '/chat/*']
+serviceEndpoints:
+  userServiceEndpoint:
+    url: 'http://localhost:4000'
+  catalogServiceEndpoint:
+    url: 'http://localhost:4001'
+  cartServiceEndpoint:
+    url: 'http://localhost:4002'
+  orderServiceEndpoint:
+    url: 'http://localhost:4003'
+  notificationServiceEndpoint:
+    url: 'http://localhost:4004'
+  chatServiceEndpoint:
+    url: 'http://localhost:4005'
+policies:
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  userPipeline:
+    apiEndpoints:
+      - userApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: userServiceEndpoint
+              changeOrigin: true
+  catalogPipeline:
+    apiEndpoints:
+      - catalogApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: catalogServiceEndpoint
+              changeOrigin: true
+  cartPipeline:
+    apiEndpoints:
+      - cartApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: cartServiceEndpoint
+              changeOrigin: true
+  orderPipeline:
+    apiEndpoints:
+      - orderApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: orderServiceEndpoint
+              changeOrigin: true
+  notificationPipeline:
+    apiEndpoints:
+      - notificationApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: notificationServiceEndpoint
+              changeOrigin: true
+  chatPipeline:
+    apiEndpoints:
+      - chatApiEndpoint
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: chatServiceEndpoint
+              changeOrigin: true
