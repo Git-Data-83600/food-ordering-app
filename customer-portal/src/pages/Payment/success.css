@@ -1,0 +1,27 @@
+.success-container {
+  width: 500px;
+  height: 200px;
+  margin: auto;
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  background-color: beige;
+}
+
+.success-container .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.success-container .success-message {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+}

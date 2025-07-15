@@ -1,0 +1,26 @@
+.thumbnail {
+  width: 80px;
+}
+
+.item-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 18px;
+  color: #939191;
+}
+
+.cart-summary {
+  padding: 10px;
+  border: #939191 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #939191;
+}

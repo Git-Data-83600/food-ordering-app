@@ -1,0 +1,27 @@
+.error-container {
+  width: 500px;
+  height: 200px;
+  margin: auto;
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  background-color: beige;
+}
+
+.error-container .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.error-container .error-message {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+}
